@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../_next/static/css/ee39c8943f484660.css" crossorigin="" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="../_next/static/chunks/webpack-8fd6f28358a6d984.js" crossorigin=""/><script src="../_next/static/chunks/1dd3208c-0aeee9f61229706e.js" async="" crossorigin=""></script><script src="../_next/static/chunks/4016-56ff16ae7be531fb.js" async="" crossorigin=""></script><script src="../_next/static/chunks/main-app-6b479f89ab941318.js" async="" crossorigin=""></script><script src="../_next/static/chunks/app/layout-28e5163cd8bd3f4e.js" async=""></script><script src="../_next/static/chunks/9968-04a8dfa1b5d42f5a.js" async=""></script><script src="../_next/static/chunks/app/error-d6b787e357bcce7b.js" async=""></script><script src="../_next/static/chunks/3040-44c5e8682a885821.js" async=""></script><script src="../_next/static/chunks/app/not-found-0fd3587ae9a8a991.js" async=""></script><script src="../_next/static/chunks/app/global-error-6aaca826cf012f1f.js" async=""></script><title>CounselFlow Ultimate</title><meta name="description" content="AI-Powered Legal Practice Management"/><script src="../_next/static/chunks/polyfills-c67a75d1b6f99dc8.js" crossorigin="" noModule=""></script></head><body class="__className_e8ce0c"><div class="min-h-screen bg-gray-50"><div class="p-6"><h1 class="text-2xl font-bold mb-4">African Legal System</h1><p>This page is under development.</p></div></div><script src="../_next/static/chunks/webpack-8fd6f28358a6d984.js" crossorigin="" async=""></script>
+<script>
+// Fix navigation links for static deployment
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Navigation fix script loaded');
+  
+  // Map of absolute paths to relative paths for GitHub Pages
+  const pathMappings = {
+    '/dashboard/': '../dashboard/',
+    '/workflows/': '../workflows/',
+    '/matter-management/': '../matter-management/',
+    '/contract-management/': '../contract-management/',
+    '/dispute-management/': '../dispute-management/',
+    '/entity-management/': '../entity-management/',
+    '/knowledge-management/': '../knowledge-management/',
+    '/risk-management/': '../risk-management/',
+    '/policy-management/': '../policy-management/',
+    '/task-management/': '../task-management/',
+    '/licensing-regulatory/': '../licensing-regulatory/',
+    '/outsourcing-legal-spend/': '../outsourcing-legal-spend/',
+    '/client-management/': '../client-management/',
+    '/ai-assistant/': '../ai-assistant/',
+    '/help-support/': '../help-support/',
+    '/settings/': '../settings/',
+    '/billing/': '../billing/',
+    '/notifications/': '../notifications/',
+    '/profile/': '../profile/',
+    '/security/': '../security/',
+    '/african-legal-system/': '../african-legal-system/'
+  };
+
+  // Fix all navigation links
+  const links = document.querySelectorAll('a[href]');
+  console.log(`Found ${links.length} links to fix`);
+  
+  let linksFixed = 0;
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (pathMappings[href]) {
+      link.setAttribute('href', pathMappings[href]);
+      console.log(`Fixed link: ${href} -> ${pathMappings[href]}`);
+      linksFixed++;
+    }
+  });
+  
+  console.log(`Fixed ${linksFixed} navigation links`);
+  
+  // Additional fix: Update any dynamically created links
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'childList') {
+        mutation.addedNodes.forEach(function(node) {
+          if (node.nodeType === 1) { // Element node
+            const newLinks = node.querySelectorAll ? node.querySelectorAll('a[href]') : [];
+            newLinks.forEach(link => {
+              const href = link.getAttribute('href');
+              if (pathMappings[href]) {
+                link.setAttribute('href', pathMappings[href]);
+                console.log(`Dynamically fixed link: ${href} -> ${pathMappings[href]}`);
+              }
+            });
+          }
+        });
+      }
+    });
+  });
+  
+  observer.observe(document.body, { childList: true, subtree: true });
+});
+</script>
+</body></html>
